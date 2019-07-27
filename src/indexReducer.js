@@ -1,5 +1,6 @@
 const initialState = {
-    currencies:[]
+    currencies:[],
+    appError: {}
 }
 
 const indexReducer= (state = initialState, action)=>{
@@ -8,6 +9,12 @@ const indexReducer= (state = initialState, action)=>{
 			return Object.assign({},
                 state,
                 {currencies: action.val}
+            )
+            
+        case 'UPDATE_ERROR':
+			return Object.assign({},
+                state,
+                {appError: action.val}
             )
 
 		default:
