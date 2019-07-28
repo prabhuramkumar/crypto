@@ -14,11 +14,12 @@ export default (data)=>{
 			const bestPrice = findBestPrice(quotesPriceSortedMaximum, quotesPriceSortedMinimum, quotesTimeSorted);
 			const profitableCurrency = Object.assign({}, bestPrice, {
 				"currency": currency.currency,
-				"date": validateDate(currency.date)
+				"date": validateDate(currency.date),
+				"id": currency.id
 			});
 			return profitableCurrency
 		});
-		
+
 		return profitArray;
 
 	}catch(error){

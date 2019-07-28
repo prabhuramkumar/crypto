@@ -4,6 +4,8 @@ Testing framework Jest.
 Babel for ES6 transpiling.
 SASS for styles with node-sass npm module.
 
+Note: Enzyme testing is not used for this project since the UI is simple.
+
 ## Available Scripts
 
 In the project directory, you can run:

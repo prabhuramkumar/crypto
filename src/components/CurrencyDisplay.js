@@ -11,21 +11,18 @@ const CurrencyDisplay = (props)=>{
         }else {
         	props.actions.updateError(result);
         }
-    });
+    }, []);
 
     const generateDisplayBox = () => {
-    	return props.currencies.length ?
-        (  
-            props.currencies.map(currency=>{
+    	if(props.currencies.length) {
+            return props.currencies.map((currency, index)=>{
                 return(
-                   <CurrencyDisplayBox key={currency.id} currency={currency}/> 
+                    <CurrencyDisplayBox  currency={currency}  key={currency.id}/> 
                 )
             })
-        ):
-        (
-            <p>Empty currencies.</p>
-        )
-    }
+        }else
+            return (<p>Empty currencies.</p>)
+        }
 
     return(
         <div className="currencyDisplay">

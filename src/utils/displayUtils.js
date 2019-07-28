@@ -1,8 +1,8 @@
 import {isValidDate} from './logicUtils';
 
 const convertToAMPM = (time) => {
-  let Hour = +time.substr(0, 2);
-  let Min = +time.substr(2, 2);
+  let Hour = time.substr(0, 2);
+  let Min = time.substr(2, 2);
 
   if(Hour>24 || Hour<0 || Min >60 || Min<0)
   	throw new Error('Invalid Time');
