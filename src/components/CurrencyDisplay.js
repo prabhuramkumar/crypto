@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react';
+import React, {useEffect } from 'react';
 import cryptoData from '../data/cryptoData';
 import currencyAnalysis from '../logics/currencyAnalysis';
 import CurrencyDisplayBox from './CurrencyDisplayBox';
 
 const CurrencyDisplay = (props)=>{
-
 	useEffect(() => {
         const result = currencyAnalysis(cryptoData);
         if(result && result.length > 0){
@@ -12,7 +11,7 @@ const CurrencyDisplay = (props)=>{
         }else {
         	props.actions.updateError(result);
         }
-    }, [props.actions]);
+    });
 
     const generateDisplayBox = () => {
     	return props.currencies.length ?

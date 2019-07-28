@@ -29,7 +29,7 @@ describe('currencyAnalysis test - Testing error cases', () => {
     expect(result.message).toEqual('Not a valid price');
   });
 
-  it('should trow error if not valid time', () => {
+  it('should throw error if not valid time', () => {
     const cryptoData = [{
     "currency":"BTC",
     "date": "20180507",
@@ -42,6 +42,21 @@ describe('currencyAnalysis test - Testing error cases', () => {
     }]
     let result = currencyAnalysis(cryptoData);
     expect(result.message).toEqual('Not a valid time');
+  });
+
+  it('should throw error for a invalid date', () => {
+    const cryptoData = [{
+    "currency":"BTC",
+    "date": "20182507",
+    "quotes":
+      [{"time":"0915", "price":"34.98"},
+      {"time":"1045", "price":"36.13"},
+      {"time":"1230", "price":"37.01"},
+      {"time":"1320", "price":"34.04"},
+      {"time":"1530", "price":"33.56"}]
+    }]
+    let result = currencyAnalysis(cryptoData);
+    expect(result.message).toEqual('invalid date');
   });
 });
 

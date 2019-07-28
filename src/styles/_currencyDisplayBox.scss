@@ -12,6 +12,10 @@
 		min-width: 300px;
 	}
 
+	.currencyDisplay__box--transaction {
+		font-weight: bold;
+	}
+
 	.currencyDisplay__box--section {
 		display: flex;
 		flex-direction:row;

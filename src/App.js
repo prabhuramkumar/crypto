@@ -10,7 +10,6 @@ class App extends Component {
 	}
 
 	render(){
-		console.log("props", this.props)
 	  const {actions, appState} = this.props;
 	  return (
 	    <div className="app">
@@ -23,6 +22,5 @@ class App extends Component {
 	  )
 	};
 }
-
 
 export default App;

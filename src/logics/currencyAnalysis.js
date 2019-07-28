@@ -1,4 +1,4 @@
-import {sortByTime, sortByPrice, findBestPrice} from '../utils/Utils';
+import {validateDate, sortByTime, sortByPrice, findBestPrice} from '../utils/logicUtils';
 
 export default (data)=>{
 	if(!data || data.length < 1)
@@ -14,10 +14,11 @@ export default (data)=>{
 			const bestPrice = findBestPrice(quotesPriceSortedMaximum, quotesPriceSortedMinimum, quotesTimeSorted);
 			const profitableCurrency = Object.assign({}, bestPrice, {
 				"currency": currency.currency,
-				"date": currency.date
+				"date": validateDate(currency.date)
 			});
 			return profitableCurrency
 		});
+		
 		return profitArray;
 
 	}catch(error){

@@ -1,3 +1,17 @@
+import moment from 'moment';
+import {formatDate} from './displayUtils';
+
+const isValidDate = (date) => {
+	return moment(date).isValid()
+} 
+
+const validateDate = (date) => {
+	if(!isValidDate(date))
+		throw new Error('invalid date');
+
+	return date;
+}
+
 const sortByTime = (quotes) => {
 	return quotes.sort((a, b) => {
 		if(isNaN(a.time) || parseInt(a.time) > 2400)
@@ -38,4 +52,4 @@ const findBestPrice = (quotesPriceSortedMaximum, quotesPriceSortedMinimum, quote
     }
 }
 
-export {sortByTime, sortByPrice, findBestPrice}
+export {isValidDate, sortByTime, sortByPrice, findBestPrice, validateDate}
