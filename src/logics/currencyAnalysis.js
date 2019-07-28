@@ -12,11 +12,11 @@ export default (data)=>{
 			const quotesPriceSortedMinimum = [...quotesPriceSortedMaximum].reverse();
 			const quotesTimeSorted =sortByTime([...currency.quotes]);
 			const bestPrice = findBestPrice(quotesPriceSortedMaximum, quotesPriceSortedMinimum, quotesTimeSorted);
-			const profitableCurrency = Object.assign({}, bestPrice, {
+			const profitableCurrency = {...bestPrice, 
 				"currency": currency.currency,
 				"date": validateDate(currency.date),
 				"id": currency.id
-			});
+			};
 			return profitableCurrency
 		});
 
