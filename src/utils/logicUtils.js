@@ -1,5 +1,4 @@
 import moment from 'moment';
-import {formatDate} from './displayUtils';
 
 const isValidDate = (date) => {
 	return moment(date).isValid()

@@ -18,7 +18,6 @@ const formatDate = (date) => {
   const year = date.substr(0, 4);
   const month = date.substr(4, 2);
   const day = date.substr(6, 2);
-  const currentYear = new Date().getFullYear();
   const newDate =  `${year}-${month}-${day}`;
 
   if(!isValidDate(newDate))
