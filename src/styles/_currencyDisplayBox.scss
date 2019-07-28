@@ -1,0 +1,26 @@
+.currencyDisplay__boxes {
+	display: flex;
+
+	[class^="currencyDisplay__box--"] {
+	  border-bottom: 1px solid #ccc;
+	  padding: 10px;
+	  text-align: center;
+	}
+
+	.currencyDisplay__box{
+		border: 1px solid #ccc;
+		min-width: 300px;
+	}
+
+	.currencyDisplay__box--section {
+		display: flex;
+		flex-direction:row;
+	  	justify-content: space-between;
+	  	padding: 0;
+
+	  	> div {
+  			flex:1;
+		}
+	}
+}
+

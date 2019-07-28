@@ -3,7 +3,7 @@ const sortByTime = (quotes) => {
 		if(isNaN(a.time) || parseInt(a.time) > 2400)
 			throw new Error('Not a valid time')
 
-    	return a.time > b.time;
+    	return a.time > b.time ? 1 : -1;
 	});
 }
 
@@ -12,15 +12,12 @@ const sortByPrice = (quotes) => {
 		if(isNaN(a.price))
 			throw new Error('Not a valid price')
 
-		a = parseFloat(a.price);
-		b = parseFloat(b.price);
-		
-    	return a < b;
+    	return parseFloat(a.price) < parseFloat(b.price) ? 1 : -1;
 	});
 }
 
 const findBestPrice = (quotesPriceSortedMaximum, quotesPriceSortedMinimum, quotesTimeSorted)=>{
-	let maximumPrice = quotesPriceSortedMaximum[0], profit;
+	let maximumPrice = quotesPriceSortedMaximum[0];
 	let minimumPrice = quotesPriceSortedMinimum[0];
 	let startingPrice = quotesTimeSorted[0];
 	if(maximumPrice.time === startingPrice.time)

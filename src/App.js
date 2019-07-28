@@ -10,12 +10,13 @@ class App extends Component {
 	}
 
 	render(){
-	  const {actions} = this.props;
+		console.log("props", this.props)
+	  const {actions, appState} = this.props;
 	  return (
 	    <div className="app">
 	    	<ErrorBoundary>
 	    		<Suspense fallback={<div>Loading...</div>}>
-	      			<CurrencyDisplay actions={actions}/>
+	      			<CurrencyDisplay actions={actions} currencies={appState.currencies}/>
 	      		</Suspense>
 	      	</ErrorBoundary>
 	    </div>

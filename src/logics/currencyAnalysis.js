@@ -2,22 +2,22 @@ import {sortByTime, sortByPrice, findBestPrice} from '../utils/Utils';
 
 export default (data)=>{
 	if(!data || data.length < 1)
-		throw new Error('oops');
+		throw new Error('Invalid crypto data.');
 
 	try {
 		let profitArray = [];
-		data.map((currency)=>{
-			const quotesPriceSortedMaximum = sortByPrice([...currency.quotes]);
-			const quotesTimeSorted =sortByTime([...currency.quotes]);
+		profitArray = data.map((currency)=>{
+			const clonedVal = [...currency.quotes];
+			const quotesPriceSortedMaximum = sortByPrice(clonedVal);
 			const quotesPriceSortedMinimum = [...quotesPriceSortedMaximum].reverse();
-			let bestPrice = findBestPrice(quotesPriceSortedMaximum, quotesPriceSortedMinimum, quotesTimeSorted);
-			let profitableCurrency = Object.assign({}, bestPrice, {
+			const quotesTimeSorted =sortByTime([...currency.quotes]);
+			const bestPrice = findBestPrice(quotesPriceSortedMaximum, quotesPriceSortedMinimum, quotesTimeSorted);
+			const profitableCurrency = Object.assign({}, bestPrice, {
 				"currency": currency.currency,
 				"date": currency.date
-			})
-			profitArray.push(profitableCurrency)
+			});
+			return profitableCurrency
 		});
-		
 		return profitArray;
 
 	}catch(error){
