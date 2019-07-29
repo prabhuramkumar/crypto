@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`currencyDisplayBox should render correctly in normal mode 1`] = `
+<div
+  className="currencyDisplay__box"
+>
+  <div
+    className="currencyDisplay__box--date"
+  >
+    2018-05-07
+  </div>
+  <div
+    className="currencyDisplay__box--name"
+  >
+    BTC
+  </div>
+  <div
+    className="currencyDisplay__box--section"
+  >
+    <div>
+      <div
+        className="currencyDisplay__box--transaction"
+      >
+        Buy
+      </div>
+      <div
+        className="currencyDisplay__box--price"
+      >
+        $
+        34.98
+      </div>
+      <div
+        className="currencyDisplay__box--time"
+      >
+        09:15 AM
+      </div>
+    </div>
+    <div>
+      <div
+        className="currencyDisplay__box--transaction"
+      >
+        Sell
+      </div>
+      <div
+        className="currencyDisplay__box--price"
+      >
+        $
+        37.01
+      </div>
+      <div
+        className="currencyDisplay__box--time"
+      >
+        12:30 PM
+      </div>
+    </div>
+  </div>
+  <div
+    className="currencyDisplay__box--profit"
+  >
+    Profit: $
+    2.03
+  </div>
+</div>
+`;

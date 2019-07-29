@@ -6,12 +6,13 @@ import CurrencyDisplayBox from './CurrencyDisplayBox';
 const CurrencyDisplay = (props)=>{
 	useEffect(() => {
         const result = currencyAnalysis(cryptoData);
+
         if(result && result.length > 0){
         	props.actions.updateCurrencies(result);
         }else {
         	props.actions.updateError(result);
         }
-    }, []);
+    }, [props.actions]);
 
     const generateDisplayBox = () => {
     	if(props.currencies.length) {
