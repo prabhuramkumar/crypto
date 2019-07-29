@@ -18,7 +18,7 @@ describe('currencyDisplayBox', () => {
 });
 
 describe('currencyDisplayBox', () => {
-  it('should render correctly in "debug" mode', () => {
+  it('should render component and all fields', () => {
   	const currency= {
       "currency": "BTC",
       "buyValue": "34.98",
@@ -30,15 +30,17 @@ describe('currencyDisplayBox', () => {
     }
     const currencyDisplayBox = shallow(<CurrencyDisplayBox currency={currency}  key={currency.id} />);
   	const component = currencyDisplayBox.find('.currencyDisplay__box');
-  	const price = currencyDisplayBox.find('.currencyDisplay__box--price');
-  	const time = currencyDisplayBox.find('.currencyDisplay__box--time');
+  	const buyPrice = currencyDisplayBox.find('.currencyDisplay__box--price').at(0);
+  	const sellPrice = currencyDisplayBox.find('.currencyDisplay__box--price').at(1);
+  	const buyTime = currencyDisplayBox.find('.currencyDisplay__box--time').at(0);
+  	const sellTime = currencyDisplayBox.find('.currencyDisplay__box--time').at(1);
   	const profit = currencyDisplayBox.find('.currencyDisplay__box--profit');
     expect(component.length).toEqual(1);
-    expect(price[0].text()).toEqual('$34.98');
-    expect(price[1].text()).toEqual('$37.01');
-    expect(time[0].text()).toEqual('09:15 AM');
-    expect(time[1].text()).toEqual('12:30 PM');
-    expect(profit.text()).toEqual('$2.03');
+    expect(buyPrice.text()).toContain('$34.98');
+    expect(sellPrice.text()).toContain('$37.01');
+    expect(buyTime.text()).toContain('09:15 AM');
+    expect(sellTime.text()).toContain('12:30 PM');
+    expect(profit.text()).toContain('$2.03');
   });
 });
 

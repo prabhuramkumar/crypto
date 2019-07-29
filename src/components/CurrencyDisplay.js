@@ -4,6 +4,8 @@ import currencyAnalysis from '../logics/currencyAnalysis';
 import CurrencyDisplayBox from './CurrencyDisplayBox';
 
 const CurrencyDisplay = (props)=>{
+    const {currencies, appError} = props.state;
+    
 	useEffect(() => {
         const result = currencyAnalysis(cryptoData);
 
@@ -15,14 +17,14 @@ const CurrencyDisplay = (props)=>{
     }, [props.actions]);
 
     const generateDisplayBox = () => {
-    	if(props.currencies.length) {
-            return props.currencies.map((currency, index)=>{
+    	if(!appError && currencies.length > 0) {
+            return currencies.map((currency, index)=>{
                 return(
                     <CurrencyDisplayBox  currency={currency}  key={currency.id}/> 
                 )
             })
         }else
-            return (<p>Empty currencies.</p>)
+            return (<p className="error__message">Some error accoured.</p>)
         }
 
     return(

@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`currencyDisplay snapshot should render correctly in normal mode 1`] = `
+<div
+  className="currencyDisplay"
+>
+  <h2
+    className="currencyDisplay__title"
+  >
+    Crypto - Profitable Currencies
+  </h2>
+  <div
+    className="currencyDisplay__boxes"
+  >
+    <CurrencyDisplayBox
+      currency={
+        Object {
+          "buyTime": "0915",
+          "buyValue": "34.98",
+          "currency": "BTC",
+          "date": "20180507",
+          "id": 1,
+          "profit": "2.03",
+          "sellTime": "1230",
+          "sellValue": "37.01",
+        }
+      }
+      key="1"
+    />
+  </div>
+</div>
+`;

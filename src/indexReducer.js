@@ -1,6 +1,6 @@
 const initialState = {
     currencies:[],
-    appError: {}
+    appError: ''
 }
 
 const indexReducer= (state = initialState, action)=>{

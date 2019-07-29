@@ -15,7 +15,7 @@ class App extends Component {
 	    <div className="app">
 	    	<ErrorBoundary>
 	    		<Suspense fallback={<div>Loading...</div>}>
-	      			<CurrencyDisplay actions={actions} currencies={appState.currencies}/>
+	      			<CurrencyDisplay actions={actions} state={appState} />
 	      		</Suspense>
 	      	</ErrorBoundary>
 	    </div>
