@@ -3,15 +3,13 @@ import cryptoData from '../data/cryptoData';
 
 describe('currencyAnalysis test - Testing error cases', () => {
   it('should return false if data is not present', () => {
-    expect(() => {
-      currencyAnalysis(null)
-    }).toThrow();
+    const result = currencyAnalysis(null);
+    expect(result.message).toEqual('Invalid crypto data.');
   });
 
   it('should return false if data has not currencies in it', () => {
-    expect(() => {
-      currencyAnalysis([])
-    }).toThrow();
+    const result = currencyAnalysis([]);
+    expect(result.message).toEqual('Invalid crypto data.');
   });
 
   it('should trow error if not valid price', () => {
