@@ -1,26 +1,20 @@
-import React, { Component, lazy, Suspense } from 'react';
+import React, { lazy, Suspense } from 'react';
 import './App.scss';
 import ErrorBoundary  from './components/ErrorBoundary';
 const CurrencyDisplay = lazy(() => import('./components/CurrencyDisplay'));
 
-class App extends Component {
-	constructor(props) {
-		super(props);
-		this.props = props;
-	}
+const App = (props) => {
+	const {actions, appState} = props;
 
-	render(){
-	  const {actions, appState} = this.props;
 	  return (
-	    <div className="app">
-	    	<ErrorBoundary>
+	  	<ErrorBoundary>
+		    <div className="app">
 	    		<Suspense fallback={<div>Loading...</div>}>
 	      			<CurrencyDisplay actions={actions} state={appState} />
 	      		</Suspense>
-	      	</ErrorBoundary>
-	    </div>
+		    </div>
+	    </ErrorBoundary>
 	  )
-	};
 }
 
 export default App;

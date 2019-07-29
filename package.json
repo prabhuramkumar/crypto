@@ -19,7 +19,6 @@
     "@babel/preset-env": "^7.5.4",
     "@babel/preset-react": "^7.0.0",
     "babel-jest": "^24.8.0",
-    "babel-plugin-transform-react-error-boundary": "^1.0.0",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.14.0",
     "react-test-renderer": "^16.8.6"
@@ -40,8 +39,7 @@
       "@babel/preset-react"
     ],
     "plugins": [
-      "@babel/proposal-class-properties",
-      "babel-plugin-transform-react-error-boundary"
+      "@babel/proposal-class-properties"
     ]
   },
   "browserslist": {
@@ -57,7 +55,11 @@
     ]
   },
   "jest": {
-    "snapshotSerializers": ["enzyme-to-json/serializer"],
-    "setupFiles": ["./src/setupTests.js"]
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "./src/setupTests.js"
+    ]
   }
 }
