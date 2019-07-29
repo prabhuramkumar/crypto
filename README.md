@@ -3,8 +3,16 @@ This is a crypto Analysis project on ReactJS, Redux and ES6.
 Testing framework Jest.
 Babel for ES6 transpiling.
 SASS for styles with node-sass npm module.
+<br>
 
-Note: Enzyme testing is not used for this project since the UI is simple.
+## What is demonstrated?
+1. Organizing code and orchestration of data flow.<br>
+2. Components handling with stateless.<br>
+3. Unit testing in different types and ways. <br>
+4. Error handling and management.<br>
+5. Organizing styles.<br>
+6. Overall sepration of concerns.
+
 
 ## Available Scripts
 
