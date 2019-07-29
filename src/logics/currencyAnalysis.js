@@ -1,10 +1,10 @@
 import {validateDate, sortByTime, sortByPrice, findBestPrice} from '../utils/logicUtils';
 
 export default (data)=>{
-	if(!data || data.length < 1)
-		throw new Error('Invalid crypto data.');
-
 	try {
+		if(!data || data.length < 1)
+			throw new Error('Invalid crypto data.');
+
 		let profitArray = [];
 		profitArray = data.map((currency)=>{
 			const clonedVal = [...currency.quotes];

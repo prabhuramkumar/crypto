@@ -2,7 +2,7 @@ import indexReducer from '../indexReducer';
 
 const initialState = {
     currencies:[],
-    appError: {}
+    appError: ''
 }
   
 describe('Reducer test - Testing initialState', () => {
